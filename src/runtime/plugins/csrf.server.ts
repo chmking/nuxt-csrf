@@ -1,4 +1,5 @@
 import { useCSRFToken } from '../composables/useCSRFToken'
+import { defineNuxtPlugin } from '#imports'
 
 export default defineNuxtPlugin(() => {
   // Add global route middleware to inject composable access
