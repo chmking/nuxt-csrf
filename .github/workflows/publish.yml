@@ -5,7 +5,8 @@ on:
     types: [created]
 
 jobs:
-  build:
+  publish:
+    environment: npm
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
