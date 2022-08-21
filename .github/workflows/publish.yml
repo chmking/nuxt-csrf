@@ -16,6 +16,7 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
       - run: yarn install --frozen-lockfile
+      - run: yarn dev:prepare
       - run: yarn prepack
       - run: npm publish --access public
         env:
