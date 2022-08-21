@@ -1,19 +1,17 @@
 import { useCSRFToken } from '../composables/useCSRFToken'
-import { defineNuxtPlugin } from '#imports'
+import { defineNuxtPlugin, addRouteMiddleware } from '#imports'
 
-export default defineNuxtPlugin(() => {
+export default defineNuxtPlugin((nuxtApp) => {
   // Add global route middleware to inject composable access
   addRouteMiddleware(
     'csrf',
     () => {
-      const app = useNuxtApp()
-
-      if (!app.ssrContext) {
+      if (!nuxtApp.ssrContext) {
         return
       }
 
       const token = useCSRFToken()
-      token.value = app.ssrContext.event.req.csrfToken()
+      token.value = nuxtApp.ssrContext.event.req.csrfToken()
     },
     { global: true }
   )
