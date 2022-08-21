@@ -12,7 +12,7 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'nuxt3-csrf',
+    name: 'nuxt-csrf',
     configKey: 'csrf',
   },
   defaults: {
@@ -33,7 +33,7 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolve(runtimeDir, 'plugins', 'csrf.server'))
 
     // Add CSRF composables
-    nuxt.hook('authImports:dirs', (dirs) => {
+    nuxt.hook('autoImports:dirs', (dirs) => {
       dirs.push(resolve(runtimeDir, 'composables'))
     })
   },
