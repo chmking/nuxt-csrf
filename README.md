@@ -71,9 +71,37 @@ function onClick() {
 </script>
 ```
 
-## Cookies
+## Options
 
-Currently this package only supports the default config from `@chmking/h3-csrf` which will add a cookie `_csrf` upon initial request to the server.
+Currently Nuxt CSRF only supports cookies for CSRF secret storage.
+
+### Cookies
+
+Nuxt CSRF can be configured with the cookie options from `@chmking/h3-csrf`.
+
+Default:
+```js
+{
+  cookies: {
+    name: '_csrf',
+    path: '/'
+  }
+}
+```
+
+## Environment Override
+
+In support of 12 factor app principles, environment overrides are available for cookie config.
+
+This will override the config in `nuxt.config.ts`.
+
+- NUXT_CSRF_COOKIE_DOMAIN
+- NUXT_CSRF_COOKIE_HTTP_ONLY
+- NUXT_CSRF_COOKIE_MAX_AGE
+- NUXT_CSRF_COOKIE_NAME
+- NUXT_CSRF_COOKIE_PATH
+- NUXT_CSRF_COOKIE_SAME_SITE
+- NUXT_CSRF_COOKIE_SECURE
 
 ## Development
 

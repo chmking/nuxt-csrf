@@ -1,6 +1,6 @@
 {
   "name": "@chmking/nuxt-csrf",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -23,8 +23,8 @@
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.8",
-    "@chmking/h3-csrf": "^0.1.0"
+    "@chmking/h3-csrf": "../h3-csrf",
+    "@nuxt/kit": "^3.0.0-rc.8"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
