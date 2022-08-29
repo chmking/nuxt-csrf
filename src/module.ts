@@ -4,7 +4,6 @@ import {
   addPlugin,
   addServerHandler,
   createResolver,
-  addTemplate,
 } from '@nuxt/kit'
 import { defu } from 'defu'
 import type { Options } from '@chmking/h3-csrf'
