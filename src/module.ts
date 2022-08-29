@@ -35,7 +35,7 @@ export default defineNuxtModule<Options>({
         httpOnly: options.cookie.httpOnly,
         name: options.cookie.name,
         path: options.cookie.path,
-        sameSite: options.cookie.sameSite,
+        sameSite: options.cookie.sameSite as string,
         secure: options.cookie.secure,
 
         // The following defaults are set to enable access via .env
