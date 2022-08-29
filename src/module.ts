@@ -32,11 +32,11 @@ export default defineNuxtModule<Options>({
     nuxt.options.runtimeConfig.csrf = defu(nuxt.options.runtimeConfig.csrf, {
       cookie: {
         domain: options.cookie.domain,
-        httpOnly: options.cookie.httpOnly.toString(),
+        httpOnly: options.cookie.httpOnly,
         name: options.cookie.name,
         path: options.cookie.path,
-        sameSite: options.cookie.sameSite.toString(),
-        secure: options.cookie.secure.toString(),
+        sameSite: options.cookie.sameSite as string,
+        secure: options.cookie.secure,
 
         // The following defaults are set to enable access via .env
         maxAge: 'undefined',
