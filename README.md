@@ -1,5 +1,7 @@
 # Nuxt CSRF 
 
+CSRF support for Nuxt
+
 ## Installation
 
 This is a [Node.js](https://nodejs.org/en/) module available through the
@@ -71,9 +73,48 @@ function onClick() {
 </script>
 ```
 
-## Cookies
+## Options
 
-Currently this package only supports the default config from `@chmking/h3-csrf` which will add a cookie `_csrf` upon initial request to the server.
+Currently Nuxt CSRF only supports cookies for CSRF secret storage.
+
+### Cookies
+
+Nuxt CSRF can be configured with the cookie options from `@chmking/h3-csrf`.
+
+Default:
+```js
+{
+  cookie: {
+    domain: '',
+    httpOnly: true,
+    name: '_csrf',
+    path: '/',
+    sameSite: 'lax',
+    secure: false,
+  },
+}
+```
+
+## Environment Override
+
+In support of 12 factor app principles, environment overrides are available for cookie config.
+
+This will override the modules config in `nuxt.config.ts`.
+
+- NUXT_CSRF_COOKIE_DOMAIN
+- NUXT_CSRF_COOKIE_HTTP_ONLY
+- NUXT_CSRF_COOKIE_MAX_AGE
+- NUXT_CSRF_COOKIE_NAME
+- NUXT_CSRF_COOKIE_PATH
+- NUXT_CSRF_COOKIE_SAME_SITE
+- NUXT_CSRF_COOKIE_SECURE
+
+In a production environment with the server running on HTTPS a more secure config is:
+
+```bash
+NUXT_CSRF_COOKIE_SAME_SITE="strict"
+NUXT_CSRF_COOKIE_SECURE="true"
+```
 
 ## Development
 

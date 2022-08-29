@@ -5,24 +5,43 @@ import {
   addServerHandler,
   createResolver,
 } from '@nuxt/kit'
+import { defu } from 'defu'
+import type { Options } from '@chmking/h3-csrf'
 
-export interface ModuleOptions {
-  addPlugin: boolean
-}
-
-export default defineNuxtModule<ModuleOptions>({
+export default defineNuxtModule<Options>({
   meta: {
     name: 'nuxt-csrf',
     configKey: 'csrf',
   },
   defaults: {
-    addPlugin: true,
+    cookie: {
+      domain: '',
+      httpOnly: true,
+      name: '_csrf',
+      path: '/',
+      sameSite: 'lax',
+      secure: false,
+    },
   },
   setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
+
+    nuxt.options.runtimeConfig.csrf = defu(nuxt.options.runtimeConfig.csrf, {
+      cookie: {
+        domain: options.cookie.domain,
+        httpOnly: options.cookie.httpOnly.toString(),
+        name: options.cookie.name,
+        path: options.cookie.path,
+        sameSite: options.cookie.sameSite.toString(),
+        secure: options.cookie.secure.toString(),
+
+        // The following defaults are set to enable access via .env
+        maxAge: 'undefined',
+      },
+    })
 
     // Add CSRF server middleware to protect globally
     addServerHandler({

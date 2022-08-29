@@ -3,5 +3,10 @@ import CsrfModule from '..'
 
 export default defineNuxtConfig({
   modules: [CsrfModule],
-  csrf: {},
+  csrf: {
+    cookie: {
+      name: 'foo',
+      sameSite: 'lax',
+    },
+  },
 })
