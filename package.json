@@ -1,6 +1,14 @@
 {
   "name": "@chmking/nuxt-csrf",
   "version": "0.2.0",
+  "author": "Christopher King <chris@coyfox.net>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chmking/nuxt-csrf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chmking/nuxt-csrf/issues"
+  },
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -23,8 +31,9 @@
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
   "dependencies": {
-    "@chmking/h3-csrf": "../h3-csrf",
-    "@nuxt/kit": "^3.0.0-rc.8"
+    "@chmking/h3-csrf": "^0.2.0",
+    "@nuxt/kit": "^3.0.0-rc.8",
+    "defu": "^6.1.0"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
