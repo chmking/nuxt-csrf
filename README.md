@@ -9,7 +9,7 @@ This is a [Node.js](https://nodejs.org/en/) module available through the
 [`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
 ```sh
-$ npm install @chmking/nuxt-csrf
+$ npm install @chmking/nuxt-csrf h3
 ```
 
 Add to modules in `nuxt.config.ts`:
@@ -20,6 +20,10 @@ export default defineNuxtConfig({
     modules: [ '@chmking/nuxt-csrf' ]
 })
 ```
+
+### Peer Dependency
+
+This package has a peer dependecy on H3 ~v0.7.21 which fixes an [issue](https://github.com/unjs/h3/issues/170) when an H3 event body is read twice.
 
 ## Usage
 
