@@ -19,8 +19,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - run: npm install --frozen-lockfile
-      - run: npm dev:prepare
-      - run: npm prepack
-      - run: npm publish --access public
+      - run: npm run dev:prepare
+      - run: npm run prepack
+      - run: npm run publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
