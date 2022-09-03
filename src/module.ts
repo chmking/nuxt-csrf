@@ -1,6 +1,7 @@
 import { fileURLToPath } from 'url'
 import {
   defineNuxtModule,
+  addImportsDir,
   addPlugin,
   addServerHandler,
   createResolver,
@@ -52,8 +53,6 @@ export default defineNuxtModule<Options>({
     addPlugin(resolve(runtimeDir, 'plugins', 'csrf.server'))
 
     // Add CSRF composables
-    nuxt.hook('autoImports:dirs', (dirs) => {
-      dirs.push(resolve(runtimeDir, 'composables'))
-    })
+    addImportsDir(resolve(runtimeDir, 'composables'))
   },
 })
