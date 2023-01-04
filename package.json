@@ -1,6 +1,6 @@
 {
   "name": "@chmking/nuxt-csrf",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "author": "Christopher King <chris@coyfox.net>",
   "repository": {
     "type": "git",
@@ -30,12 +30,9 @@
     "lint": "eslint . --ext .js,.ts",
     "lint:fix": "eslint . --ext .js,.ts --fix"
   },
-  "peerDependencies": {
-    "h3": "~0.7.21"
-  },
   "dependencies": {
-    "@chmking/h3-csrf": "^0.2.2",
-    "@nuxt/kit": "^3.0.0-rc.8",
+    "@chmking/h3-csrf": "^1.0.0",
+    "@nuxt/kit": "^3.0.0",
     "defu": "^6.1.0"
   },
   "devDependencies": {
@@ -44,7 +41,7 @@
     "eslint": "latest",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "nuxt": "^3.0.0-rc.9",
+    "nuxt": "^3.0.0",
     "prettier": "^2.7.1"
   },
   "keywords": [
