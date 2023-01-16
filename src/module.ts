@@ -15,6 +15,7 @@ export default defineNuxtModule<Options>({
     configKey: 'csrf',
   },
   defaults: {
+    verifiedMethods: ['PATCH', 'POST', 'PUT', 'DELETE'],
     cookie: {
       domain: '',
       httpOnly: true,
@@ -31,6 +32,7 @@ export default defineNuxtModule<Options>({
     nuxt.options.build.transpile.push(runtimeDir)
 
     nuxt.options.runtimeConfig.csrf = defu(nuxt.options.runtimeConfig.csrf, {
+      verifiedMethods: options.verifiedMethods,
       cookie: {
         domain: options.cookie?.domain,
         httpOnly: options.cookie?.httpOnly,

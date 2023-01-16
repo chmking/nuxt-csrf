@@ -31,7 +31,7 @@
     "lint:fix": "eslint . --ext .js,.ts --fix"
   },
   "dependencies": {
-    "@chmking/h3-csrf": "^1.0.0",
+    "@chmking/h3-csrf": "^1.0.1",
     "@nuxt/kit": "^3.0.0",
     "defu": "^6.1.0"
   },
