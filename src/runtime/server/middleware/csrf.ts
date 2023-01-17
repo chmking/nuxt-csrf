@@ -13,4 +13,12 @@ if (options.cookie.maxAge === 'undefined') {
   options.cookie.maxAge = null
 }
 
+if (typeof options.verifiedMethods === 'string') {
+  options.verifiedMethods = options.verifiedMethods.split(',')
+}
+
+if (!Array.isArray(options.verifiedMethods)) {
+  throw new TypeError('csrf verified method must be of type array')
+}
+
 export default defineEventHandler(csrf(options))
