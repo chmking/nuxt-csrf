@@ -26,12 +26,12 @@
     "prepack": "nuxt-module-build build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxi prepare playground",
     "lint": "eslint . --ext .js,.ts",
     "lint:fix": "eslint . --ext .js,.ts --fix"
   },
   "dependencies": {
-    "@chmking/h3-csrf": "^1.0.2",
+    "@chmking/h3-csrf": "^1.0.3",
     "@nuxt/kit": "^3.13.2",
     "defu": "^6.1.0"
   },
